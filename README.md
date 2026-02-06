@@ -18,12 +18,12 @@ chmod +x install.sh
 
 ## Images
 
-![Hyprkill](https://github.com/ramn100dev/Hyprkill/tree/main/Ex_Pics/Hyprkill.png "Hyprkill")
+![Hyprkill](https://github.com/ramn100dev/Hyprkill/blob/master/Ex_Pics/Hyprkill.png "Hyprkill")
 
-![Neofetch](https://github.com/ramn100dev/Hyprkill/tree/main/Ex_Pics/Neofetch.png "Neofetch")
+![Neofetch](https://github.com/ramn100dev/Hyprkill/blob/master/Ex_Pics/Neofetch.png "Neofetch")
 
-![Kitty](https://github.com/ramn100dev/Hyprkill/tree/main/Ex_Pics/Kitty.png "Kitty")
+![Kitty](https://github.com/ramn100dev/Hyprkill/blob/master/Ex_Pics/Kitty.png "Kitty")
 
-![Wofi](https://github.com/ramn100dev/Hyprkill/tree/main/Ex_Pics/Wofi.png "Wofi")
+![Wofi](https://github.com/ramn100dev/Hyprkill/blob/master/Ex_Pics/Wofi.png "Wofi")
 
-![Hyprlock](https://github.com/ramn100dev/Hyprkill/tree/main/Ex_Pics/Hyprlock.png "Hyprlock")
+![Hyprlock](https://github.com/ramn100dev/Hyprkill/blob/master/Ex_Pics/Hyprlock.png "Hyprlock")
