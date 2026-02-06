@@ -1,0 +1,41 @@
+* {
+  font-family: "VCR OSD Mono";
+  font-size: 16px;
+  color: white;
+  background-image: none;
+  box-shadow: none;
+}
+
+/* Fondo general */
+window {
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 2px solid white;
+  border-radius: 0px;
+  padding: 10px;
+}
+
+/* Entrada de búsqueda */
+#input {
+  background-color: rgba(30, 30, 30, 0.9);
+  border: 2px solid white;
+  color: white;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 0px;
+}
+
+/* Entradas de resultado */
+#entry {
+  padding: 10px;
+  margin: 4px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+}
+
+/* Hover/selección */
+#entry:selected {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid white;
+  color: white;
+}
+

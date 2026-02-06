@@ -1,0 +1,136 @@
+/**
+ * ROFI Color theme
+ * User: Habib
+ * Copyright: JuJu Ashbe !!
+*/
+
+* {
+    dark:#0f0f0f;
+    red:#ea6962;
+    red-alt:#ca3433;
+    orange:#e78a4e;
+    yellow: #d8a657;
+    blue:#7daea3;
+    green:#a9a665;
+    aqua: #89b482;
+    grey:#504945;
+    dark-grey:rgba(0, 0, 0, 0.7);
+    transparent:rgba(0, 0, 0, 0.7);
+    highlight:underline bold #ca3433;
+
+    white:#ffffff;
+    mainTrans:rgba(0, 0, 0, 0.7);
+
+    padding:0;
+    margin:0;
+    border:0;
+    border-radius:0;
+    spacing:0;
+    vertical-align: 0.5;
+
+    text-color: @white;
+    border-color:rgba(92, 92, 92, 0.6);
+    background-color:@transparent;
+
+    font:"VCR OSD Mono 14";
+    border-radius: 2px;
+}
+
+configuration {
+    show-icons: true;
+    display-drun: " Apps ";
+    display-run: " Cmd: ";
+    display-window: " Win : ";
+}
+
+window {
+    width: 25%;
+    location: center;
+    background-color: @dark-grey;
+    orientaion: horizontal;
+}
+
+mainbox {
+    children: [inputbar, message,listview];
+}
+
+inputbar {
+    margin: 8px 8px 3px 8px;
+    background-color: @border-color;
+    children: [prompt,entry];
+}
+
+prompt {
+    padding: 5px;
+    margin: 2px;
+    background-color: @dark-grey;
+    text-color: @white;
+    font:"VCR OSD Mono 14";
+}
+
+entry {
+    padding:5px;
+    margin:2px;
+    background-color:@dark-grey;
+    text-color:@white;
+    font:"VCR OSD Mono 14";
+}
+
+listview {
+    lines:10;
+    padding:8px;
+    border: 2px;
+    margin:8px;
+    background-color: rgba(0, 0, 0, 0);
+    children:[element];
+}
+
+element {
+    padding:2px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+element-text {
+    size:1em;
+    padding:4px;
+    margin:0px;
+    text-color:inherit;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+element-icon{
+    padding:4px;
+    margin:1px;
+    size:1em;
+}
+
+element selected {
+    background-color: @white;
+    text-color: @dark;
+}
+
+element selected active {
+    background-color: @red-alt;
+}
+
+message {
+    expand:true;
+    background-color: @dark-grey;
+    children: [textbox];
+}
+
+
+textbox {
+    expand: true;
+    padding:3px;
+    background-color:@red-alt;
+    text-color:@dark-grey;
+}
+
+error-message {
+    expand: true;
+    border: 2px;
+    padding:5px;
+    background-color: @dark-grey;
+    text-color:@dark;
+}

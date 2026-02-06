@@ -1,0 +1,49 @@
+* {
+	background-image: none;
+	box-shadow: none;
+	font-family: "VCR OSD Mono";
+}
+
+window {
+	background-color: rgba(12, 12, 12, 0.7);
+}
+
+button {
+    border-radius: 2px;
+    border: 4px solid rgba(49, 49, 49, 0.6);
+	text-decoration-color: #FFFFFF;
+	font-size: 26px;
+    color: #FFFFFF;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-style: solid;
+	border-width: 3px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 30%;
+}
+
+
+button:active, button:hover {
+	background-color: #2e2e2e;
+	outline-style: none;
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+	margin: 50px 5px 5px 300px;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+	margin: 50px 300px 5px 5px;
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/powerOff.png"));
+	margin: 5px 5px 50px 300px;
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reset.png"));
+	margin: 5px 300px 50px 5px;
+}

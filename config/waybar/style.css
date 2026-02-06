@@ -1,0 +1,108 @@
+@import "frappe.css";
+
+/* General */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "VCR OSD Mono", "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  box-shadow: none;
+}
+
+/* ---- Layout de las secciones ---- */
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo negro translúcido estilo HUD */
+  border: 2px solid rgba(49, 49, 49, 0.6);            /* Borde blanco estilo pixel */
+  margin: 3px 4px;
+  padding: 5px 10px;
+  border-radius: 2px;                   /* Nada de bordes redondeados */
+}
+
+/* ---- Barra principal ---- */
+window#waybar {
+  background-color: transparent;
+  border: none;
+}
+
+/* ---- Texto de ventana activa ---- */
+#window {
+  color: white;
+  font-size: 14px;
+  padding: 0 6px;
+}
+
+/* ---- Workspaces (íconos) ---- */
+#workspaces,
+#workspaces button,
+#workspaces button.empty {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  color: white;
+  margin: 0 2px;
+  padding: 2px 6px;
+  background: none;
+  border: none;
+}
+
+/* ---- Workspaces hover ---- */
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* ---- Módulos individuales estilo HUD ---- */
+#clock,
+#backlight,
+#wireplumber,
+#network,
+#battery,
+#language,
+#tray,
+#idle_inhibitor,
+#custom-power {
+  color: white;
+  padding: 0px 6px;
+  margin: 0 2px;
+  font-size: 16px;
+  background: none;
+  border: none;
+}
+
+#custom-icon {
+  background-image: url('/home/ramn/.config/waybar/V1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  min-width: 28px;
+  min-height: 28px;
+  margin: 4px 6px;
+  padding: 0;
+}
+
+
+/* ---- Iconos individuales ---- */
+#custom-icon,
+#custom-power {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 20px;
+  padding-top: 1px;
+}
+
+/* ---- Inhibidor ---- */
+#idle_inhibitor {
+  font-size: 18px;
+  padding-top: 1px;
+}
+
+/* ---- Tooltip (opcional) ---- */
+tooltip {
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid white;
+  font-family: "VCR OSD Mono";
+  font-size: 13px;
+  color: white;
+  border-radius: 0px;
+}
+
