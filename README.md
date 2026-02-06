@@ -6,6 +6,7 @@ I have been adding a lot across this year learning about linux, and I though it 
 ## Installation
 
 1.- Have a clean Arch installation
+
 2.- Clone this repo and grant permissions to the install.sh
 ```bash
 git clone https://github.com/tu-usuario/dotfiles
