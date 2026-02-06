@@ -71,7 +71,7 @@ window#waybar {
 }
 
 #custom-icon {
-  background-image: url('/home/ramn/.config/waybar/V1.png');
+  background-image: url('~/.config/waybar/V1.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
