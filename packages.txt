@@ -65,4 +65,4 @@ xdg-desktop-portal-hyprland
 xdg-user-dirs-gtk
 xorg-server
 xorg-xinit
-bash1
+playerctl
