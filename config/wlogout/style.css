@@ -29,21 +29,21 @@ button:active, button:hover {
 }
 
 #logout {
-    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    background-image: image(url("/home/ramn/.config/wlogout/icons/logout.png"));
 	margin: 50px 5px 5px 300px;
 }
 
 #lock {
-    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+    background-image: image(url("/home/ramn/.config/wlogout/icons/lock.png"));
 	margin: 50px 300px 5px 5px;
 }
 
 #shutdown {
-    background-image: image(url("/usr/share/wlogout/icons/powerOff.png"));
+    background-image: image(url("/home/ramn/.config/wlogout/icons/shutdown.png"));
 	margin: 5px 5px 50px 300px;
 }
 
 #reboot {
-    background-image: image(url("/usr/share/wlogout/icons/reset.png"));
+    background-image: image(url("/home/ramn/.config/wlogout/icons/reboot.png"));
 	margin: 5px 300px 50px 5px;
 }

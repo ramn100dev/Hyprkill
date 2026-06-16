@@ -12,8 +12,8 @@
 }
 {
     "label" : "lock",
-    "action" : "mpvpaper -l overlay -vs -o 'no-audio loop' '*' ~/.config/hypr/ultrakill.mp4 -f & sleep 0.65; hyprlock; pkill mpvpaper",
-    "text": "Lock"
+    "action" : "mpvpaper -l overlay -vs -o 'no-audio loop panscan=1.0' '*' ~/.config/hypr/ultrakill.mp4 -f & sleep 0.65; hyprlock; pkill mpvpaper",
+    "text": "Lock",
     "keybind" : "u"
 }
 {

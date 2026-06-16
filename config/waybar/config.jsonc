@@ -41,7 +41,7 @@
 
 
   "hyprland/workspaces" : {
-      "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = {name} })'",
+      "on-click": "~/.local/bin/ws-focus.sh {name}",
       "active-only": false,
       "all-outputs": true,
       "format": "{icon}",
@@ -65,7 +65,7 @@
     "format-disabled": " Off",
     "format-connected": " {device_alias}",
     "interval": 2,
-    "on-click": "kitty bluetui | grep -q 'Powered: yes' && echo 'On' || echo 'Off'"
+    "on-click": "kitty bluetui"
   },
   
   "backlight": {
@@ -91,12 +91,12 @@
     "interval": 30,
     "format-wifi": "󰤨 {essid}",
     "format-ethernet": "󰈀 Wired",
-    "fomat-disconnected": "󱚵 Disconnected",
+    "format-disconnected": "󱚵 Disconnected",
     "format-disabled": "󱚵 Disabled",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "kitty impala"
+    "on-click": "kitty nmtui"
   },
 
   "battery": {

@@ -60,6 +60,8 @@ window#waybar {
 #battery,
 #language,
 #tray,
+#bluetooth,
+#custom-picker,
 #idle_inhibitor,
 #custom-power {
   color: white;

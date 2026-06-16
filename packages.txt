@@ -15,7 +15,6 @@ hyprlock
 hyprpaper
 hyprpicker
 hyprpolkitagent
-impala
 jq
 kitty
 lazygit
@@ -39,7 +38,11 @@ pipewire-jack
 pipewire-pulse
 power-profiles-daemon
 qt5-wayland
-rofi-lbonn-wayland-git
+rofi
+greetd
+greetd-tuigreet
+ttf-jetbrains-mono-nerd
+ttf-vcr-osd-mono
 slurp
 superfile
 supergfxctl

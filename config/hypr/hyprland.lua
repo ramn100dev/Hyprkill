@@ -12,9 +12,9 @@
 
 hl.monitor({
     output   = "eDP-1",
-    mode     = "1920x1080@144",
+    mode     = "highres",        -- coge automáticamente la resolución más alta (no fija). En este panel = 2560x1600@240
     position = "0x0",
-    scale    = 1,
+    scale    = 1,                -- nativo puro. Si el texto es muy pequeño, sube a 1.6 o 1.25
 })
 
 hl.monitor({
@@ -40,12 +40,19 @@ local navigator   = "brave"
 
 -- https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
+    -- Exporta el entorno Wayland a systemd/D-Bus: arregla xdg-desktop-portal
+    -- (capturas vía portal, diálogos de archivos, compartir pantalla).
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP HYPRLAND_INSTANCE_SIGNATURE")
     hl.exec_cmd("wl-clip-persist --clipboard primary")
+    hl.exec_cmd("hyprpaper")
     hl.exec_cmd("dunst")
     hl.exec_cmd("notify-send -i ~/.config/dunst/icons/death.png 'Bienvenido a Hyprkill'")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("waybar")
+    -- Fondo inicial aleatorio de ~/Pictures/WallPaper/. Espera a que hyprpaper tenga su
+    -- IPC listo (hasta ~6s) antes de pedir el fondo. SUPER+R reejecuta este mismo script.
+    hl.exec_cmd("bash -c 'for i in $(seq 1 20); do hyprctl hyprpaper listactive >/dev/null 2>&1 && break; sleep 0.3; done; ~/.local/bin/hyprpaper-random.sh'")
 end)
 
 
@@ -56,8 +63,11 @@ end)
 -- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 hl.env("XCURSOR_SIZE",              "24")
 hl.env("HYPRCURSOR_SIZE",           "24")
-hl.env("LIBVA_DRIVER_NAME",         "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+-- GPU: portátil HÍBRIDO (AMD Radeon 860M iGPU + NVIDIA RTX 5070 dGPU).
+-- La sesión la renderiza la AMD; forzar GLX/VAAPI a "nvidia" (herencia del PC anterior)
+-- rompía apps OpenGL y la aceleración de vídeo. Se deja en AMD por autodetección.
+-- Para lanzar una app concreta en la NVIDIA: instala 'nvidia-prime' y usa  prime-run <app>
+-- hl.env("LIBVA_DRIVER_NAME", "radeonsi")
 
 
 -----------------------
@@ -219,13 +229,13 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 -- Kill active: two commands fire on the same key (visual effect + kill)
 -- hyprctl dispatch now requires Lua syntax in 0.55; old "killactive" string is rejected
 hl.bind(mainMod .. " + W", function()
-    hl.exec_cmd("kitty --app-id white -c .config/kitty/kitty.white.conf dash")
+    hl.exec_cmd("kitty --app-id white -c .config/kitty/kitty.white.conf sleep 1")
     hl.exec_cmd("mpv .config/hypr/parry-ultrakill.mp3")
     hl.exec_cmd([[bash -c "sleep 0.6  && hyprctl dispatch 'hl.dsp.window.close()'"]])
     hl.exec_cmd([[bash -c "sleep 0.65 && hyprctl dispatch 'hl.dsp.window.close()'"]])
 end)
 
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd([[mpvpaper -l overlay -vs -o 'no-audio loop' '*' ~/.config/hypr/ultrakill.mp4 -f & sleep 0.65; hyprlock; pkill mpvpaper]]))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("~/.local/bin/lock.sh"))
 hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
@@ -310,9 +320,10 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name  = "white-float-fullsize",
+    name  = "white-flash",
     match = { class = "white" },
     float   = true,
     no_anim = true,
-    size    = "monitor_w monitor_h",
+    size    = "100% 100%",
+    move    = "0 0",
 })
