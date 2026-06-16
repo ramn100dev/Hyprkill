@@ -9,7 +9,7 @@ I have been adding a lot across this year learning about linux, and I though it 
 
 2.- Clone this repo and grant permissions to the install.sh
 ```bash
-git clone https://github.com/tu-usuario/dotfiles
+git clone https://github.com/ramn100dev/hyprkill
 chmod +x install.sh
 ```
 3.- Run the install.sh script
