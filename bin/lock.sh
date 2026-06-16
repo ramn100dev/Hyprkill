@@ -19,7 +19,9 @@ start_video() {
     pkill -x mpvpaper 2>/dev/null
     sleep 0.2
     # -f: fork (sobrevive al cierre del script).  SIN -s (no auto-stop).
-    mpvpaper -f -l overlay -o 'no-audio loop panscan=1.0' '*' "$VIDEO"
+    # keepaspect=no: estira el vídeo para LLENAR la pantalla entera (fill), sin
+    # recortar (panscan recortaba) ni bordes negros. Se deforma algo la proporción.
+    mpvpaper -f -l overlay -o 'no-audio loop keepaspect=no' '*' "$VIDEO"
 }
 
 # Modo reanimar: solo si realmente estamos bloqueados
