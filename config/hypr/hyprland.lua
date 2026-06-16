@@ -324,6 +324,11 @@ hl.window_rule({
     match = { class = "white" },
     float   = true,
     no_anim = true,
-    size    = "100% 100%",
+    -- Tamaño EN PÍXELES del panel (eDP-1 = 2560x1600) para cubrir TODA la pantalla,
+    -- incluida la zona de la barra. Con "100% 100%" Hyprland recorta al área útil
+    -- (monitor menos los 62px que reserva waybar) y la ventana quedaba pequeña y
+    -- subida. La barra sigue viéndose porque va en capa superior (top).
+    -- Si cambias de monitor/resolución, ajusta estos dos números.
+    size    = "2560 1600",
     move    = "0 0",
 })
