@@ -43,6 +43,12 @@ hl.on("hyprland.start", function()
     -- Exporta el entorno Wayland a systemd/D-Bus: arregla xdg-desktop-portal
     -- (capturas vía portal, diálogos de archivos, compartir pantalla).
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP HYPRLAND_INSTANCE_SIGNATURE")
+    -- Levanta graphical-session.target (vía hyprland-session.target, que lo arrastra
+    -- con BindsTo). Sin esto el FRONTEND xdg-desktop-portal no arranca (tiene
+    -- Requisite=graphical-session.target) y NO hay ScreenCast -> Vesktop/Discord no
+    -- ofrecen compartir pantalla. greetd lanza Hyprland sin gestor de sesión systemd,
+    -- así que nadie activaba ese target.
+    hl.exec_cmd("systemctl --user start hyprland-session.target")
     hl.exec_cmd("wl-clip-persist --clipboard primary")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("dunst")

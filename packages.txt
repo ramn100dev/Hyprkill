@@ -67,6 +67,7 @@ xdg-user-dirs-gtk
 xorg-server
 xorg-xinit
 playerctl
+vesktop-bin
 yazi
 ffmpegthumbnailer
 7zip
