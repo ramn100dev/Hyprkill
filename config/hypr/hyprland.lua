@@ -30,7 +30,7 @@ hl.monitor({
 ---------------------
 
 local terminal    = "kitty"
-local fileManager = "nautilus"
+local fileManager = "kitty yazi"
 local navigator   = "brave"
 
 

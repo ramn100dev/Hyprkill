@@ -24,6 +24,7 @@
     "wireplumber",
     "network",
     "battery",
+    "custom/powerprofile",
     "tray",
     "custom/power"
   ],
@@ -97,6 +98,13 @@
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "on-click": "kitty nmtui"
+  },
+
+  "custom/powerprofile": {
+    "exec": "~/.config/waybar/scripts/powerprofile-status.sh",
+    "return-type": "json",
+    "interval": 3,
+    "on-click": "~/.config/waybar/scripts/cycle-power-profile.sh"
   },
 
   "battery": {

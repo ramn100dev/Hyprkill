@@ -23,7 +23,6 @@ loupe
 man-db
 mpv
 mpvpaper
-nautilus
 neofetch
 neovim
 networkmanager
@@ -69,3 +68,11 @@ xdg-user-dirs-gtk
 xorg-server
 xorg-xinit
 playerctl
+yazi
+ffmpegthumbnailer
+7zip
+poppler
+fd
+ripgrep
+fzf
+imagemagick

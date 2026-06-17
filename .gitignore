@@ -1,6 +1,8 @@
 # Cruft específico de la máquina (no forma parte del rice)
 config/fish/fish_variables
 config/systemd/user/*.target.wants/
+# Servicios systemd personales (infra propia, no parte del rice)
+config/systemd/user/*.service
 
 # Backups que crea el instalador (~/.config/<name>.bak.*) y locales
 *.bak

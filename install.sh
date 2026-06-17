@@ -34,6 +34,7 @@ CONFIGS=(
   rofi
   wofi
   wlogout
+  yazi
   neofetch
   nvim
   fish

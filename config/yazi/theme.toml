@@ -1,0 +1,200 @@
+# Hyprkill — tema para yazi (sin rojo)
+# Base oscura #1c262b con acento teal #6dc1b8, calcado de kitty
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Manager {{{
+
+[mgr]
+cwd = { fg = "#6dc1b8", bold = true }
+
+# Hovered — barra teal sobre el item bajo el cursor
+hovered         = { fg = "#0e1518", bg = "#6dc1b8", bold = true }
+preview_hovered = { fg = "#ffffff", bg = "#243036", underline = true }
+
+# Find
+find_keyword  = { fg = "#fee92e", bold = true, italic = true }
+find_position = { fg = "#6dc1b8", bg = "reset", italic = true }
+
+# Marker
+marker_copied   = { fg = "#3fa33f", bg = "#3fa33f" }
+marker_cut      = { fg = "#e8954f", bg = "#e8954f" }
+marker_marked   = { fg = "#6dc1b8", bg = "#6dc1b8" }
+marker_selected = { fg = "#fee92e", bg = "#fee92e" }
+
+# Count
+count_copied   = { fg = "#0e1518", bg = "#3fa33f" }
+count_cut      = { fg = "#0e1518", bg = "#e8954f" }
+count_selected = { fg = "#0e1518", bg = "#fee92e" }
+
+# Tab
+tab_active   = { fg = "#0e1518", bg = "#6dc1b8", bold = true }
+tab_inactive = { fg = "#c1c8d6", bg = "#1c262b" }
+tab_width    = 1
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#4a5560" }
+
+# Highlighting
+syntect_theme = ""
+
+# : }}}
+
+
+# : Mode {{{
+
+[mode]
+normal_main = { fg = "#0e1518", bg = "#6dc1b8", bold = true }
+normal_alt  = { fg = "#6dc1b8", bg = "#1c262b", bold = true }
+
+select_main = { fg = "#0e1518", bg = "#fee92e", bold = true }
+select_alt  = { fg = "#fee92e", bg = "#1c262b", bold = true }
+
+unset_main  = { fg = "#0e1518", bg = "#e8954f", bold = true }
+unset_alt   = { fg = "#e8954f", bg = "#1c262b", bold = true }
+
+# : }}}
+
+
+# : Status {{{
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#1c262b", bg = "#1c262b" }
+
+# Progress
+progress_label  = { fg = "#ffffff", bold = true }
+progress_normal = { fg = "#6dc1b8", bg = "#1c262b" }
+progress_error  = { fg = "#e8954f", bg = "#1c262b", bold = true }
+
+# Permissions
+perm_type  = { fg = "#6dc1b8" }
+perm_read  = { fg = "#fee92e" }
+perm_write = { fg = "#e8954f" }
+perm_exec  = { fg = "#3fa33f" }
+perm_sep   = { fg = "#5c6670" }
+
+# : }}}
+
+
+# : Pick {{{
+
+[pick]
+border   = { fg = "#6dc1b8" }
+active   = { fg = "#6dc1b8", bold = true }
+inactive = { fg = "#c1c8d6" }
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border   = { fg = "#6dc1b8" }
+title    = { fg = "#c1c8d6" }
+value    = { fg = "#ffffff" }
+selected = { fg = "#0e1518", bg = "#6dc1b8" }
+
+# : }}}
+
+
+# : Confirm {{{
+
+[confirm]
+border     = { fg = "#6dc1b8" }
+title      = { fg = "#6dc1b8", bold = true }
+content    = { fg = "#c1c8d6" }
+list       = { fg = "#6dc1b8" }
+btn_yes    = { fg = "#0e1518", bg = "#6dc1b8", bold = true }
+btn_no     = { fg = "#c1c8d6" }
+btn_labels = [ "  [Y] Yes  ", "  [N] No  " ]
+
+# : }}}
+
+
+# : Completion {{{
+
+[cmp]
+border   = { fg = "#6dc1b8" }
+active   = { fg = "#0e1518", bg = "#6dc1b8", bold = true }
+inactive = { fg = "#c1c8d6" }
+
+icon_file    = ""
+icon_folder  = ""
+icon_command = ""
+
+# : }}}
+
+
+# : Tasks {{{
+
+[tasks]
+border  = { fg = "#6dc1b8" }
+title   = { fg = "#c1c8d6" }
+hovered = { fg = "#6dc1b8", underline = true }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+cols            = 3
+mask            = { bg = "#1c262b" }
+cand            = { fg = "#6dc1b8" }
+rest            = { fg = "#5c6670" }
+desc            = { fg = "#c1c8d6" }
+separator       = "  "
+separator_style = { fg = "#5c6670" }
+
+# : }}}
+
+
+# : Help {{{
+
+[help]
+on      = { fg = "#6dc1b8" }
+run     = { fg = "#fee92e" }
+hovered = { fg = "#0e1518", bg = "#6dc1b8", bold = true }
+footer  = { fg = "#1c262b", bg = "#c1c8d6" }
+
+# : }}}
+
+
+# : Notify {{{
+
+[notify]
+title_info  = { fg = "#3fa33f" }
+title_warn  = { fg = "#fee92e" }
+title_error = { fg = "#e8954f" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+
+rules = [
+	# Imágenes
+	{ mime = "image/*", fg = "#fee92e" },
+	# Audio / vídeo
+	{ mime = "{audio,video}/*", fg = "#a94dbb" },
+	# Archivos comprimidos
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#e8954f" },
+	# Documentos
+	{ mime = "application/{pdf,doc,rtf}", fg = "#53a4f3" },
+
+	# Ejecutables
+	{ url = "*", is = "exec", fg = "#3fa33f" },
+
+	# Orfanos (symlinks rotos)
+	{ url = "*", is = "orphan", fg = "#e8954f" },
+
+	# Fallbacks
+	{ url = "*/", fg = "#6dc1b8" },
+	{ url = "*", fg = "#c1c8d6" },
+]
+
+# : }}}
