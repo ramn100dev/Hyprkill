@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Yazi (kitty)
+Comment=Abrir carpeta en yazi dentro de kitty
+Exec=kitty yazi %f
+Terminal=false
+MimeType=inode/directory;
+Categories=System;FileManager;
+NoDisplay=true

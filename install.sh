@@ -73,6 +73,21 @@ for script in "$DOTS_DIR"/bin/*; do
   echo "  Linked $name"
 done
 
+# --- Desktop entries + MIME defaults ---
+# yazi es TUI, así que necesita un .desktop propio que lo lance en kitty para que
+# "Mostrar en carpeta" del navegador (xdg-open sobre el directorio) abra el gestor
+# en vez de una terminal pelada. Por defecto inode/directory apuntaba a kitty-open.
+if [ -d "$DOTS_DIR/applications" ]; then
+  mkdir -p "$HOME/.local/share/applications"
+  for app in "$DOTS_DIR"/applications/*.desktop; do
+    [ -f "$app" ] || continue
+    ln -sf "$app" "$HOME/.local/share/applications/$(basename "$app")"
+    echo "  Linked $(basename "$app")"
+  done
+  update-desktop-database "$HOME/.local/share/applications" 2>/dev/null || true
+  xdg-mime default yazi-kitty.desktop inode/directory 2>/dev/null || true
+fi
+
 # --- System setup (greeter + network + fonts) ---
 # Estos son los pasos de sistema que antes había que hacer a mano. Necesitan sudo.
 echo "[5/6] System setup (greeter, network, fonts)..."

@@ -319,6 +319,18 @@ hl.window_rule({
     no_focus = true,
 })
 
+-- Diálogo de subir/descargar archivos. En Chromium/Brave sale como ventana
+-- aparte con clase "Brave" (¡distinta de "Brave-browser"!); otras apps usan el
+-- portal GTK. Aparecía flotante pegado a 0,0, tapado por waybar. Lo centramos:
+-- el centrado de Hyprland respeta el área reservada por la barra. El ^...$ ancla
+-- la clase para NO afectar a las ventanas normales del navegador (Brave-browser).
+hl.window_rule({
+    name   = "file-chooser-dialog",
+    match  = { class = "^(Brave|xdg-desktop-portal-gtk)$" },
+    float  = true,
+    center = true,
+})
+
 hl.window_rule({
     name  = "white-flash",
     match = { class = "white" },
