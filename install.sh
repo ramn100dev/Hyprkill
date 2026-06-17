@@ -39,7 +39,6 @@ CONFIGS=(
   nvim
   fish
   btop
-  superfile
   lazygit
   systemd
 )

@@ -43,7 +43,6 @@ greetd-tuigreet
 ttf-jetbrains-mono-nerd
 ttf-vcr-osd-mono
 slurp
-superfile
 supergfxctl
 sysstat
 ttf-nerd-fonts-symbols
