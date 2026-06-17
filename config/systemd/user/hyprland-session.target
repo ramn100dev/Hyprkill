@@ -4,5 +4,7 @@ Documentation=man:systemd.special(7)
 BindsTo=graphical-session.target
 Wants=graphical-session-pre.target
 After=graphical-session-pre.target
-Wants=xdg-desktop-autostart.target
-After=xdg-desktop-autostart.target
+# NO arrancamos xdg-desktop-autostart.target a propósito: lanzaba apps de
+# /etc/xdg/autostart como xwaylandvideobridge (ventana molesta e innecesaria,
+# Vesktop captura por Wayland directo). Solo necesitamos graphical-session.target
+# para que el frontend del portal levante y haya ScreenCast.
